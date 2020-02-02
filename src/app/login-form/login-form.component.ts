@@ -28,11 +28,9 @@ export class LoginFormComponent implements OnInit {
   logIn(){
     this.auth.logIn(this.user).subscribe(
       responseFb=>{
-        console.log("logueado", responseFb);   
         this.router.navigateByUrl('home');
       },
       err=>{
-        console.log(err.error);
         this.presentAlert("Usuario o contraseña incorrectos");
       }
     )
