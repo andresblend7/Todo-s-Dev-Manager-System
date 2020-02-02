@@ -1,5 +1,7 @@
 {
   "name": "DevelopWorkManagerSystem",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Crear tarea
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-margin ion-padding">
+
+    <ion-item>
+      <ion-label position="floating">
+        Título *
+      </ion-label>
+      <ion-input [(ngModel)]="todoData.titulo"></ion-input>
+    </ion-item>
+    <div class="ion-margin-top">
+      <ion-item>
+        <ion-label position="floating">Observaciones</ion-label>
+        <ion-textarea [(ngModel)]="todoData.observaciones" rows="4"></ion-textarea>
+      </ion-item>
+    </div>
+    <div class="ion-margin-top">
+      <ion-item>
+        <ion-label position="floating">Estado *</ion-label>
+      <ion-select  [(ngModel)]="todoData.estado">
+          <ion-select-option  *ngFor="let state of todoStates" [value]="state.id">
+              {{state.name}} 
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="ion-margin-top">
+      <ion-item>
+        <ion-label>Auto-asignación</ion-label>
+        <ion-toggle [(ngModel)]="todoData.asignado"></ion-toggle>
+      </ion-item>
+    </div>
+
+    <div class="ion-margin ion-padding">
+      <ion-button expand="block" color="primary" (click)="saveTodo()">Crear tarea</ion-button>
+
+    </div>
+  </div>
+
+</ion-content>
